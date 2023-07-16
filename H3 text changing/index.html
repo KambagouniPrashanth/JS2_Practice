@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Functions</title>
+    <meta charset="UTF-8" />
+</head>
+<body>
+    <div id="app">
+        <h2>String Functions</h2>
+    </div>
+    
+    <input type="text" placeholder="String to be Added" id="str" />
+    <button id="add">Add</button>
+    <h3 id="output"></h3>
+    <hr/>
+    
+    <!-- //find and replace part -->
+    <div>
+        <input type="text" placeholder="Find" id="find" />
+        <input type="text" placeholder="Replace" id="replace" />
+        <br><br>
+        <button id="findAndReplace">Find & Replace</button>
+    </div>
+    <hr>
+    
+    <!-- converting string toUpperCase -->
+    <div>
+        <button id="toUpper">To UpperCase</button>
+    </div>
+    
+    <hr>
+
+        <!-- converting string toLowerCase -->
+
+    <div>
+        <button id="toLower">To LowerCase</button>
+    </div>
+    <hr>
+    <!-- concat with the existing string -->
+   
+    <div>
+        <input placeholder="to Concat" id="second" />
+        <button id="concat">Concat</button>
+    </div>
+    <hr>
+
+    <script>
+        // Find and replace functionality
+        document.getElementById("findAndReplace").addEventListener("click", function () {
+            var findString = document.getElementById("find").value;
+            var replaceString = document.getElementById("replace").value;
+            var outputElement = document.getElementById("output");
+            var str = outputElement.textContent;
+            var updatedString = str.replace(findString, replaceString);
+            outputElement.textContent = updatedString;
+        });
+
+        // Uppercase functionality
+        document.getElementById("toUpper").addEventListener("click", function () {
+            var outputElement = document.getElementById("output");
+            var str = outputElement.textContent;
+            var updatedString = str.toUpperCase();
+            outputElement.textContent = updatedString;
+        });
+
+        // Lowercase functionality
+        document.getElementById("toLower").addEventListener("click", function () {
+            var outputElement = document.getElementById("output");
+            var str = outputElement.textContent;
+            var updatedString = str.toLowerCase();
+            outputElement.textContent = updatedString;
+        });
+
+        // Concatenation functionality
+        document.getElementById("concat").addEventListener("click", function () {
+            var appendString = document.getElementById("second").value;
+            var outputElement = document.getElementById("output");
+            var str = outputElement.textContent;
+            var updatedString = str + appendString;
+            outputElement.textContent = updatedString;
+        });
+
+        // Add button functionality
+        document.getElementById("add").addEventListener("click", function () {
+            var str = document.getElementById("str").value;
+            var outputElement = document.getElementById("output");
+            var currentString = outputElement.textContent;
+            var updatedString = currentString + str;
+            outputElement.textContent = updatedString;
+        });
+    </script>
+</body>
+</html>
+

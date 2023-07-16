@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>First Class functions</h1>
+    <script>
+        //The map function takes other function as argument
+        function doubleElements(x){
+        return 2*x;
+        }
+
+        let DoubleResult=[1,2,3,4,5,6].map(doubleElements)
+
+        function filterElemLesThanTwo(x){
+        return x<2
+        }
+
+        let ResultLessThanTwo=[1,2,3,4,5,6].filter(filterElemLesThanTwo)
+
+        console.log(DoubleResult)
+        console.log(ResultLessThanTwo)
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>First Class functions</h1>
+    <script>
+        //The map function takes other function as argument
+        const Person = {
+                play:(name) => {
+                    return `Hey ${name} is playing`;
+                },
+                dance:(name) => {
+                    return `${name} can dance`
+                },
+                walk:(name) => {
+                    return `I am sure ${name} can walk `
+                },
+            }
+            
+            console.log(Person.play("Chibueze"));
+            console.log(Person.dance("Chibueze"));
+            console.log(Person.walk("Chibueze"));
+    </script>
+</body>
+</html>

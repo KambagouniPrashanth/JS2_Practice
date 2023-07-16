@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Static Template</title>
+  </head>
+  <body>
+    <h1>
+      Write a function capable of receiving another function and a number ‘x’ as
+      an argument and then executing it after ‘x’ seconds.
+    </h1>
+    <div id="demo">
+
+    </div>
+  </body>
+  <script>
+    function accioJob() {
+    //   console.log("AccioJob");
+      return "Acciojob"
+    }
+    document.getElementById("demo").innerText=paramExec(accioJob, 5000);
+
+
+    function paramExec(callback, x) {
+      // complete the function
+      setTimeout(()=>{
+        console.log(callback())
+        // return callback();
+      },x)
+      return callback();
+      
+    //   then(()=>{
+    //     return callback()
+    //   }).catch((error)=>{
+    //     return error.message;
+    //   })
+    }
+
+     // Shoud display 'Acciojob' after 5 seconds in console
+  </script>
+</html>

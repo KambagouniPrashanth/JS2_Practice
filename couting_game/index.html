@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter Game Prashanth</title>
+</head>
+<body>
+    <h1>Counter Game</h1>
+    <p>Player A:<span id="couterA">0</span></p>
+    <p>Player B:<span id="couterB">0</span></p>
+    <button onclick="increment('A')">Player A +</button>
+    <button onclick="increment('B')">Player B +</button>
+    
+    <script>
+        function Counter(){
+            let counterA=0;
+            let counterB=0;
+
+            function incrementA(){
+                counterA++;
+                couterB--;
+                updateCounter();
+                checkWin();
+
+            }
+
+            function incrementB(){
+                counterA--;
+                couterB++;
+                updateCounter();
+                checkWin();
+
+            }
+
+            function updateCounter(){
+                document.getElementById("couterA").textContent=counterA;
+                document.getElementById("couterB").textContent=counterB;
+
+
+            }
+
+
+            function checkWin(){
+                if(counterA>=10){
+                    alert(`A win the game`)
+                    resetCounters();
+                }
+                else if(counterB>=10){
+                    alert(`B win the game`)
+                    resetCounters();
+                }
+            }
+
+            function resetCounters(){
+                counterA=0;
+                counterB=0;
+                updateCounter()
+            }
+
+            return {increment: {A:incrementA,B:incrementB }}
+    }
+
+        let counter=Counter();
+        
+        function increment(Player){
+            counter.increment[player]();
+        }
+
+    </script>
+
+   
+
+
+    
+</body>
+</html>

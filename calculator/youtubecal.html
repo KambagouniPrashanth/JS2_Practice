@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="nu2">NUMber1</label>
+    <input type="text" id="num1"><br>
+
+    <label for="num1">NUMber2</label>
+    <input type="text" id="num2"><br>
+
+    <select name="operator" id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+
+    <button onclick="calc()">=</button><br>
+    <label for="num1">Result</label>
+    <input type="text" id="result"><br>
+
+    <script>
+        function calc(){
+            let a=parseInt(document.getElementById("num1").value) 
+            let b=parseInt(document.getElementById("num2").value) 
+            
+            let op=document.getElementById("operator").value
+
+            if(op==="+"){
+                
+                document.getElementById("result").value=a+b;
+            }
+            else if(op==="-"){
+                if(a>b){
+                    document.getElementById("result").value=a-b;
+
+                }
+                else if(b>a){
+                    document.getElementById("result").value=b-a;
+
+
+                }
+            }
+
+            else if(op==="*"){
+                document.getElementById("result").value=a*b;
+            }
+            else if(op==="/"){
+                document.getElementById("result").value=Math.floor(a/b);
+            }
+            else{
+                document.getElementById("result").value="operator not valid"
+            }
+
+
+        }
+    </script>
+    
+
+
+
+    
+</body>
+</html>

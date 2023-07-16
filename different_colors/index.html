@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #square{
+            width: 200px;
+            height: 200px;
+            border: 2px solid green;
+            
+        }
+    </style>
+</head>
+<body>
+    <div id="square">
+
+    </div>
+    <button id="colorbutton">Click To Change color</button>
+    <script>
+        function RandomColor(){
+            let letter="123456789ABCDEFG"
+            let color="#";
+            for(let i=0;i<6;i++){
+                color+=letter[Math.floor(Math.random()*16)];
+                console.log(color)
+            }
+            return color;
+        }
+
+        function assignColor(){
+            const square=document.getElementById("square");
+            let random=RandomColor()
+            square.style.backgroundColor=random;
+
+        }
+        let colorchange=document.getElementById("colorbutton");
+        colorchange.addEventListener("click",assignColor)
+    </script>
+    
+</body>
+</html>

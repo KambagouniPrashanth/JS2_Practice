@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Write a JavaScript function in the script tag which takes an object as parameter and reverse</h1>
+    <script>
+        //one method
+        // let obj="Kambagouni Prashanth Goud"
+        // let new_obj="";
+        // for(let i=0;i<obj.length;i++){
+        //     new_obj=obj[i]+new_obj
+        // }
+        // console.log(new_obj)
+        //if asked reverse only the positions not string values
+        let obj="Kambagouni Prashanth Goud"
+        let new_arr=obj.split(" ")
+        // new_arr.reverse()
+        // new_arr.forEach(element=>{
+        //     console.log(element)
+        // })
+        let arr=[];
+        for(let i=0;i<new_arr.length;i++){
+            arr.unshift(new_arr[i])
+        }
+        console.log(arr)
+    </script>
+    
+</body>
+</html>
