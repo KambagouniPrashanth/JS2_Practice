@@ -42,5 +42,24 @@
       console.log(invert_key_value({ red: "#FF0000", green: "#00FF00", white: "#FFFFFF" })); 
       // Expected output: {#FF0000: "red", #00FF00: "green", #FFFFFF: "white"}
     </script>
+
+    <script>
+      function objectReverse(obj){
+              const revObj = {};
+              for(const key in obj){
+                  const value = obj[key];//it will asign value to the value const variable
+                  revObj[value] = key;//here we making new object{value}=key
+              }
+              return revObj;
+      }
+      
+      const originalObj = {
+              a: 1,
+              b: 2,
+              c: 3};
+      const revObj = objectReverse(originalObj);
+      console.log(revObj);
+
+    </script>
   </body>
 </html>
