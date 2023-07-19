@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <h2>String Functions</h2>
+    </div>
+    
+    <input type="text" placeholder="String to be Added" id="str" />
+    <button id="add">Add</button>
+    <h3 id="output"></h3>
+    <hr/>
+    
+    <!-- //find and replace part -->
+    <div>
+        <input type="text" placeholder="Find" id="find" />
+        <input type="text" placeholder="Replace" id="replace" />
+        <br><br>
+        <button id="findAndReplace">Find & Replace</button>
+    </div>
+    <hr>
+    
+    <!-- converting string toUpperCase -->
+    <div>
+        <button id="toUpper">To UpperCase</button>
+    </div>
+    
+    <hr>
+
+        <!-- converting string toLowerCase -->
+
+    <div>
+        <button id="toLower">To LowerCase</button>
+    </div>
+    <hr>
+    <!-- concat with the existing string -->
+   
+    <div>
+        <input placeholder="to Concat" id="second" />
+        <button id="concat">Concat</button>
+    </div>
+    <hr>
+    <script>
+        document.getElementById("add").addEventListener("click",addText)
+        document.getElementById("findAndReplace").addEventListener("click",findAndReplace)
+        document.getElementById("toUpper").addEventListener("click",toUpperCase)
+        document.getElementById("toLower").addEventListener("click",toLowerCase)
+        document.getElementById("concat").addEventListener("click",concatString)
+
+
+        function addText(){
+            let str= document.getElementById("str").value;
+            let outpuElement=document.getElementById("output")
+            let outputstring=outpuElement.textContent;
+            let updatedstring=str+outputstring;
+            outpuElement.textContent=updatedstring;
+            str.value="";
+
+
+        }
+
+        function findAndReplace(){
+            let find=document.getElementById("find").value;
+            let replace=document.getElementById("replace").value;
+            let outpuElement=document.getElementById("output")
+
+            let str=outpuElement.textContent;
+            let updatedString=str.replace(find,replace)
+            outpuElement.textContent=updatedString;
+        }
+
+        function toUpperCase(){
+            let outpuElement=document.getElementById("output")
+            let updated_string=outpuElement.textContent;
+            let str=updated_string.toUpperCase();
+            outpuElement.textContent=str;
+
+
+        }
+
+        function toLowerCase(){
+            let outpuElement=document.getElementById("output")
+            let updated_string=outpuElement.textContent;
+            let str=updated_string.toLowerCase();
+            outpuElement.textContent=str;
+
+
+        }
+
+
+        function concatString(){
+            let str= document.getElementById("second").value;
+            let outpuElement=document.getElementById("output")
+            let outputstring=outpuElement.textContent;
+            let updatedstring=outputstring+str;
+            outpuElement.textContent=updatedstring;
+            str.value="";
+
+
+        }
+    </script>
+    
+</body>
+</html>

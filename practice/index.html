@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Practice</h1>
+   
+        <!-- the entire body must be written by student -->
+        <form onsubmit="return false" id="form">
+          <input type="text" id="text" placeholder="Text" />
+          <input type="number" id="delay" placeholder="Delay" />
+          <button type="button" id="btn" onclick="myGreeting()">Submit</button>
+        </form>
+    
+        <div id="output"></div>
+    
+        <script type="text/javascript" src="./script.js"></script>
+      
+    <script>
+        let inputText=document.getElementById("text");
+        let delaytime=document.getElementById("delay")
+        let output=document.getElementById("output");
+        let btn=document.getElementById("btn");
+
+        async function myGreeting(){
+            await new Promise((resolve,reject)=>{
+                setTimeout(()=>{
+                    resolve()
+
+                },delaytime.value)
+                
+                output.innerText=inputText.value;
+
+            })
+        }
+
+        btn.addEventListener("click",myGreeting)
+
+
+
+        // let a=new Promise((resolve,reject)=>{
+        //     setTimeout(()=>{
+        //         resolve("kambagouni")
+        //     },3000)
+        // })
+        // console.log(a)
+        // a.then((data)=>{
+        //     console.log(data)
+        // }).catch((error)=>{
+        //     console.log(error.name)
+        // })
+    </script>
+    
+</body>
+</html>

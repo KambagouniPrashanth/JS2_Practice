@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>age Difference</h1>
+    <script>
+function calculateAge(birthDate) {
+  var currentDate = new Date();
+  var birthDateArray = birthDate.split("/");
+  
+  var dayOfBirth = parseInt(birthDateArray[0]);
+  var monthOfBirth = parseInt(birthDateArray[1]) - 1; // January is 0 in JavaScript dates
+  var yearOfBirth = parseInt(birthDateArray[2]);
+  
+  var birthDateObj = new Date(yearOfBirth, monthOfBirth, dayOfBirth);
+  
+  var ageInMilliseconds = currentDate - birthDateObj;
+  var ageDate = new Date(ageInMilliseconds); // converted to a date object
+//   console.log(ageDate)
+  console.log(ageDate.getUTCFullYear())
+  console.log(ageDate.getUTCMonth())
+
+  
+  var year = ageDate.getUTCFullYear() - 1970;
+  var month = ageDate.getUTCMonth();
+  var day = ageDate.getUTCDate() - 1; // subtract 1, as it starts from 0
+  
+  return day + " day(s), " + month + " month(s), " + year + " year(s)";
+}
+
+var birthDate = "05/05/1990";
+var age = calculateAge(birthDate);
+console.log(age); // Example output: 0
+</script>
+    
+</body>
+</html>
